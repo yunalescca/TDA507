@@ -3,6 +3,18 @@ import os
 import numpy as np
 from math import pow, sqrt
 
+# Approach: I loop through all atoms in the second file. For each of these
+# atoms, I start looping through the atoms in the first file. Whenever the
+# distance between their centers is less than 2 * RADIUS, I save this as
+# an overlap, and also increase 'total number of comparisons'. Whenever I
+# find one of these overlaps, I break the current loop and move on to the
+# next atom in the second file.
+
+# Data structure: I save the atoms from the second file, which overlaps
+# with atoms from the first file, in a set. I did this to avoid duplicates,
+# but as I break the current loop when there is an overlap, this should 
+# not be necessary.
+
 RADIUS = 2  # Å
 
 
